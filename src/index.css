@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-luxury-cream text-luxury-black font-sans overflow-x-hidden;
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+.gold-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-luxury-gold to-yellow-200;
+}
+
+.btn-luxury {
+  @apply px-8 py-3 bg-luxury-black text-luxury-gold border border-luxury-gold hover:bg-luxury-gold hover:text-luxury-black transition-all duration-500 font-serif tracking-widest uppercase text-sm;
+}
