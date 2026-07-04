@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luxe Boutique | powered by Layboka</title>
+    <style>
+        body { background: #4B0082; color: #D4AF37; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: 'Playfair Display', serif; }
+        .logo { width: 150px; margin-bottom: 20px; animation: stitch 2s linear; }
+        .footer { position: absolute; bottom: 20px; font-size: 12px; opacity: 0.7; letter-spacing: 2px; }
+        @keyframes stitch { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+    <img src="/static/images/logo.png" class="logo" alt="Luxe Logo">
+    <h1>Birth of the Icon</h1>
+    <div class="footer">powered by Layboka</div>
+    <script>setTimeout(() => { window.location.href = '/dashboard'; }, 4000);</script>
+</body>
+</html>
