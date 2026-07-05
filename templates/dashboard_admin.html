@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-5 fade-in">
+    <div class="col-md-8">
+        <h1>Welcome, {{ current_user.business_name }}</h1>
+        <p class="text-muted">Boutique Command Center</p>
+    </div>
+    <div class="col-md-4 text-end">
+        <a href="{{ url_for('tailoring_form') }}" class="btn btn-gold">+ New Measurement</a>
+    </div>
+</div>
+
+<div class="row fade-in">
+    <div class="col-12">
+        <div class="luxury-card">
+            <h4 class="mb-4">Recent Measurements</h4>
+            <div class="table-responsive">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Gender</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td>{{ order.customer_name }}</td>
+                            <td><span class="badge bg-secondary">{{ order.gender }}</span></td>
+                            <td>{{ order.created_at.strftime('%Y-%m-%d') }}</td>
+                            <td><button class="btn btn-sm btn-outline-warning">View Details</button></td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center">No records found. Start by adding your first client.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

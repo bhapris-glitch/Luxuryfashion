@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="splash-overlay">
+    <div class="text-center">
+        <h1 id="logo-text" style="color: var(--gold); font-size: 4rem; letter-spacing: 10px;">LUXE</h1>
+        <p id="sub-text" style="color: white; opacity: 0;">Birth of the Icon...</p>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        const tl = gsap.timeline();
+        tl.from("#logo-text", { scale: 0.5, opacity: 0, duration: 1.5, ease: "back.out" })
+          .to("#sub-text", { opacity: 1, duration: 1 })
+          .to("#splash-overlay", { 
+              y: "-100%", 
+              duration: 1.2, 
+              delay: 1, 
+              ease: "expo.inOut",
+              onComplete: () => {
+                  window.location.href = "{{ url_for('login') }}";
+              }
+          });
+    };
+</script>
+{% endblock %}
