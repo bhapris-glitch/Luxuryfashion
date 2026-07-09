@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="gold-text">Tailoring Engine</h2>
+    <div class="tabs">
+        <button onclick="showTab('male')">Gentlemen</button>
+        <button onclick="showTab('female')">Ladies</button>
+    </div>
+    <div id="male" class="tab-view">
+        <select><option>Tuxedo</option><option>3-Piece Suit</option><option>Sherwani</option></select>
+        <input type="number" placeholder="Neck (cm)">
+    </div>
+    <div id="female" class="tab-view" style="display:none;">
+        <select><option>Wedding Gown</option><option>Midi Dress</option><option>Capri</option></select>
+        <input type="number" placeholder="Bust (cm)">
+    </div>
+</div>
+<script>
+function showTab(g){
+    document.getElementById('male').style.display = g==='male'?'block':'none';
+    document.getElementById('female').style.display = g==='female'?'block':'none';
+}
+</script>
+{% endblock %}
