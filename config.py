@@ -1,0 +1,1 @@
+import os\nclass Config:\n    SECRET_KEY='layboka_2024'\n    SQLALCHEMY_TRACK_MODIFICATIONS=False
